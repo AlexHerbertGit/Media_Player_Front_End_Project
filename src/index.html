@@ -16,9 +16,27 @@
         <div class="music-container" id="music-container">
             <div class="music-info">
                 <h4 id="title"></h4>
-                <div class="progress-container" id="progress-container"></div>
+                <div class="progress-container" id="progress-container">
+                    <div class="progress" id="progress"></div>
+                </div>
+            </div>
+            <audio src="" id="audio"></audio>
+            <div class="img-container">
+                <img src="" alt="Album Cover" id="cover">
+            </div>
+            <div class="navigation">
+                <button class="action-btn" id="prev">
+                    <i class="fas fa-backward"></i>
+                </button>
+                <button class="action-btn action-btn-big" id="play">
+                    <i class="fas fa-play"></i>
+                </button>
+                <button class="action-btn" id="next">
+                    <i class="fas fa-forward"></i>
+                </button>
             </div>
         </div>
-        <script src="" async defer></script>
+        
+        <script src="script.js" async defer></script>
     </body>
 </html>
