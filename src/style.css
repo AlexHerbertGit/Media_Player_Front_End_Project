@@ -19,7 +19,7 @@ body {
 }
 
 .music-container {
-    background-color: rgb(168, 244, 160);
+    background-color: rgb(109, 188, 241);
     border-radius: 15px;
     box-shadow: 0 10px 20px 0 rgb(56, 90, 117);
     display: flex;
@@ -80,16 +80,16 @@ body {
 }
 
 .action-btn {
-    background-color: #fff;
+    background-color: #08a4e2;
     border: 0;
-    color: cornsilk;
+    color: rgb(14, 53, 68);
     cursor: pointer;
     padding: 10px;
     margin: 0 20px;
 }
 
 .action-btn.action-btn-big {
-    color: #cdc2cd;
+    color: rgb(14, 53, 68);
     font-size: 30px;
 }
 
@@ -137,6 +137,6 @@ body {
     border-radius: 5px;
     height: 100%;
     width: 0%;
-    transform: width 0.1s linear;
+    transition: width 0.1s linear;
 }
 

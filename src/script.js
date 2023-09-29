@@ -15,7 +15,7 @@ const songs = ['blue-reeves', 'slow-snow', 'the-roads']
 
 let songIndex = 2
 
-loadSongs(songs[songIndex])
+loadSong(songs[songIndex])
 
 function loadSong(song) {
     title.innerText = song
@@ -27,9 +27,10 @@ function loadSong(song) {
 //Play Song
 
 function playSong() {
-    musicContainer.classList.add('play')
-    playBtn.querySelector('i.fas').classList.remove('fa-play')
-    playBtn.querySelector('i.fas').classList.add('fa-pause')
+    musicContainer.classList.add('play');
+    playBtn.querySelector('i.fas').classList.remove('fa-play');
+    playBtn.querySelector('i.fas').classList.add('fa-pause');
+    audio.play();
 
 }
 
@@ -38,9 +39,8 @@ function playSong() {
 function pauseSong() {
     musicContainer.classList.remove('play')
     playBtn.querySelector('i.fas').classList.add('fa-play')
-    playBtn.querySelector('i.fas').classList.remove('pause')
-
-    
+    playBtn.querySelector('i.fas').classList.remove('fa-pause')
+    audio.pause();
 }
 
 function prevSong() {
@@ -80,7 +80,7 @@ function updateProgress(e) {
 }
 
 function setProgress(e) {
-    const width = this.clientwidth
+    const width = progressContainer.clientwidth
     const clickX = e.offsetX
     const duration = audio.duration
 
@@ -102,7 +102,10 @@ playBtn.addEventListener('click', () => {
 prevBtn.addEventListener('click', prevSong)
 nextBtn.addEventListener('click', nextSong)
 
-audio.addEventListener('timeupdate', updateProgress)
+// Wait for the metadata to load before attaching the timeupdate event listener
+audio.addEventListener('loadedmetadata', function () {
+    audio.addEventListener('timeupdate', updateProgress);
+});
 
 progressContainer.addEventListener('click', setProgress)
 
